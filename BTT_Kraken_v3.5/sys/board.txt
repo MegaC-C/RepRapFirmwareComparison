@@ -1,0 +1,26 @@
+//Config for BTT Kraken
+board = biqukraken_h723
+
+//WiFi pins
+8266wifi.espDataReadyPin = PG_8
+8266wifi.TfrReadyPin = PG_7
+8266wifi.espResetPin = PG_6
+8266wifi.spiChannel = 6
+8266wifi.csPin = PE_11
+
+//ESP32 RX/TX Settings
+8266wifi.serialRxTxPins = { PB_11, PB_10 }
+
+//other
+serial.aux.rxTxPins = { PD_9, PD_8 }
+heat.tempSensePins = { PB_0, PB_1, PC_5, PC_4, PA_7 }
+//leds.diagnostic = 
+can.writePin = PD_1
+can.readPin = PD_0
+
+//TMC Smart Drivers
+stepper.numSmartDrivers = 8
+stepper.DriverType = {tmc5160, tmc5160, tmc5160, tmc5160, tmc5160, tmc5160, tmc5160, tmc5160}
+stepper.spiChannel = 3;
+SPI3.pins = {PC_6, PC_7, PC_8}
+						
