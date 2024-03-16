@@ -34,11 +34,11 @@ M569.9 P2 R0.022 ; driver 2 has a 0.022 Ohm sense resistor
 M569.9 P4 R0.075 ; driver 4 has a 0.075 Ohm sense resistor
 M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M906 X1000 Y1000 Z800 A500 B500 ; set axis driver currents
-M92 X80 Y80 Z80 A8.8888 B8.8888 ; configure steps per mm
+M92 X80 Y80 Z100 A8.8888 B8.8888 ; configure steps per mm
 M208 X0:600 Y0:600 Z0:100 A-180:180 B-180:180 ; set minimum and maximum axis limits
-M566 X900 Y900 Z12 A900 B900 ; set maximum instantaneous speed changes (mm/min)
-M203 X6000 Y6000 Z180 A6000 B6000 ; set maximum speeds (mm/min)
-M201 X500 Y500 Z20 A500 B500 ; set accelerations (mm/s^2)
+M566 X1000 Y1000 Z1000 A1000 B1000 P1 ; Jerk always allowed, set maximum instantaneous speed changes (mm/min)
+M203 X6000 Y6000 Z6000 A6000 B6000 ; set maximum speeds (mm/min)
+M201 X500 Y500 Z500 A500 B500 ; set accelerations (mm/s^2)
 
 ; Kinematics
 M669 K1 ; configure CoreXY kinematics
