@@ -11,8 +11,8 @@ M552 P0.0.0.0 S1 ; configure Ethernet adapter
 M586 P0 S1 ; configure HTTP
 
 ; Smart Drivers
-M569 P0 S1 D2 ; driver 0 goes forwards (X axis)
-M569 P1 S1 D2 ; driver 1 goes forwards (Y axis)
+M569 P0 S0 D2 ; driver 0 goes backwards (X axis)
+M569 P1 S0 D2 ; driver 1 goes backwards (Y axis)
 M569 P2 S1 D2 ; driver 2 goes forwards (Z axis)
 M569 P4 S1 D2 ; driver 4 goes forwards (A axis)
 M569 P5 S1 D2 ; driver 5 goes forwards (B axis)
