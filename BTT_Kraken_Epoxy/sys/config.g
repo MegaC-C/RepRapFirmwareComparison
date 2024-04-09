@@ -36,18 +36,13 @@ M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M569.9 P6 R0.075 ; driver 6 has a 0.075 Ohm sense resistor
 M569.9 P7 R0.075 ; driver 7 has a 0.075 Ohm sense resistor
 M906 E2000:2000:2000:2000:2000:2000:2000:2000 ; set extruder driver currents
-M92 E420:420:420:420:420:420:420:420 ; configure steps per mm
-M566 E120:120:120:120:120:120:120:120 ; set maximum instantaneous speed changes (mm/min)
-M203 E3600:3600:3600:3600:3600:3600:3600:3600 ; set maximum speeds (mm/min)
-M201 E250:250:250:250:250:250:250:250 ; set accelerations (mm/s^2)
+M92 E6400:6400:6400:6400:6400:6400:6400:6400 ; configure steps per mm
+M566 E10:10:10:10:10:10:10:10 ; set maximum instantaneous speed changes (mm/min)
+M203 E100:100:100:100:100:100:100:100 ; set maximum speeds (mm/min)
+M201 E2:2:2:2:2:2:2:2 ; set accelerations (mm/s^2)
 
 ; Kinematics
 M669 K0 ; configure Cartesian kinematics
-
-; Endstops
-M574 X0 ; configure X axis endstop
-M574 Y0 ; configure Y axis endstop
-M574 Z0 ; configure Z axis endstop
 
 ; Mosfet GPIOs
 M950 P0 C"e0heat" ; high current mosfets
