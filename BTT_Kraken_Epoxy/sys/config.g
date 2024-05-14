@@ -25,8 +25,15 @@ M906 I30 ; set motor current idle factor
 M84 S30 ; set motor current idle timeout
 
 ; Extruders
-M584 E0:1:2:3:4:5:6:7 ; set extruder mapping
-M350 E16:16:16:16:16:16:16:16 I1 ; configure microstepping with interpolation
+M584 X0 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 Y1 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 Z2 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 U3 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 V4 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 W5 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 A6 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M584 B7 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
+M350 X16 Y16 Z16 U16 V16 W16 A16 B16 I1 ; configure microstepping with interpolation
 M569.9 P0 R0.022 ; driver 0 has a 0.022 Ohm sense resistor
 M569.9 P1 R0.022 ; driver 1 has a 0.022 Ohm sense resistor
 M569.9 P2 R0.022 ; driver 2 has a 0.022 Ohm sense resistor
@@ -35,14 +42,18 @@ M569.9 P4 R0.075 ; driver 4 has a 0.075 Ohm sense resistor
 M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M569.9 P6 R0.075 ; driver 6 has a 0.075 Ohm sense resistor
 M569.9 P7 R0.075 ; driver 7 has a 0.075 Ohm sense resistor
-M906 E2000:2000:2000:2000:2000:2000:2000:2000 ; set extruder driver currents
-M92 E6400:6400:6400:6400:6400:6400:6400:6400 ; configure steps per mm
-M566 E10:10:10:10:10:10:10:10 ; set maximum instantaneous speed changes (mm/min)
-M203 E100:100:100:100:100:100:100:100 ; set maximum speeds (mm/min)
-M201 E2:2:2:2:2:2:2:2 ; set accelerations (mm/s^2)
+M906 X4000 Y4000 Z4000 U4000 V2000 W2000 A2000 B2000 ; set extruder driver currents
+M92 X64 Y64 Z64 U64 V64 W64 A64 B64 ; configure steps per XX uL
+;M208 X0:100 Y0:100 Z0:100 U0:100 V0:100 W0:100 A0:100 B0:100 ; set minimum and maximum axis limits
+M566 X10000 Y10000 Z10000 U10000 V10000 W10000 A10000 B10000 ; set maximum instantaneous speed changes (mm/min)
+M203 X10000 Y10000 Z10000 U10000 V10000 W10000 A10000 B10000 ; set maximum speeds (mm/min)
+M201 X10 Y10 Z10 U10 V10 W10 A10 B10 ; set accelerations (mm/s^2)
 
 ; Kinematics
 M669 K0 ; configure Cartesian kinematics
+
+; Endstops
+M574 X0 Y0 Z0 U0 V0 W0 A0 B0 ; configure B axis endstop
 
 ; Mosfet GPIOs
 M950 P0 C"e0heat" ; high current mosfets
@@ -57,6 +68,13 @@ M950 P8 C"fan4" ; low current mosfets
 M950 P9 C"fan5" ; low current mosfets
 M950 P10 C"fan6" ; low current mosfets
 M950 P11 C"fan7" ; low current mosfets
+M42 P4 S0 ;
+M42 P5 S1 ;
+
+; Input Buttons
+M950 J0 C"xstop"  ; Input 0 uses xstop pin
+M581 P0 T2 S1 R0  ; connect trigger2.g (T2) to input 0 (P0), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
 
 ; Miscellaneous
 M501 ; load saved parameters from non-volatile memory
+
