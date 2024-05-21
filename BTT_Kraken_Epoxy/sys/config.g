@@ -60,23 +60,23 @@ M950 P0 C"e0heat" ; high current mosfets
 M950 P1 C"e1heat" ; high current mosfets
 M950 P2 C"e2heat" ; high current mosfets
 M950 P3 C"e3heat" ; high current mosfets
-M950 P4 C"fan0" ; low current mosfets
-M950 P5 C"fan1" ; low current mosfets
+M950 P4 C"fan0" Q2 ; low current mosfets, 2Hz PWM
+M950 P5 C"fan1" Q2 ; low current mosfets, 2Hz PWM
 M950 P6 C"fan2" ; low current mosfets
 M950 P7 C"fan3" ; low current mosfets
 M950 P8 C"fan4" ; low current mosfets
 M950 P9 C"fan5" ; low current mosfets
 M950 P10 C"fan6" ; low current mosfets
 M950 P11 C"fan7" ; low current mosfets
-M42 P4 S0 ;
-M42 P5 S1 ;
+M42 P4 S0 ; turn off red LED 
+M42 P5 S1 ; turn on green LED
 
 ; Input Buttons
-M950 J0 C"xstop"  ; Input 0 uses xstop pin
+M950 J0 C"xstop"  ; Input 0 pin
 M581 P0 T0 S1 R0  ; connect emergency stop (T0=M112) to input 0 (P0), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
-M950 J2 C"e1stop"  ; Input 2 uses xstop pin
+M950 J2 C"e1stop"  ; Input 2 pin
 M581 P2 T2 S1 R0  ; connect trigger2.g (T2) to input 2 (P2), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
-M950 J3 C"e4stop"  ; Input 3 uses xstop pin
+M950 J3 C"e4stop"  ; Input 3 pin
 M581 P3 T3 S1 R0  ; connect trigger3.g (T3) to input 3 (P3), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
 
 ; Miscellaneous
