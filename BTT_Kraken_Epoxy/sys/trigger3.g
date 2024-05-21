@@ -1,5 +1,5 @@
-; Das ist der Spülen Knopf
-var epoxyAmount=1000
+; Das ist der Eingießen Knopf
+var epoxyAmount=100
 var epoxyRetract=-20
 
 M581 P2 T2 S1 R-1  ; disable trigger (R-1) on input 2 (P2) for trigger2.g (T2)

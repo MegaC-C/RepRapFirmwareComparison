@@ -73,7 +73,11 @@ M42 P5 S1 ;
 
 ; Input Buttons
 M950 J0 C"xstop"  ; Input 0 uses xstop pin
-M581 P0 T2 S1 R0  ; connect trigger2.g (T2) to input 0 (P0), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
+M581 P0 T0 S1 R0  ; connect emergency stop (T0=M112) to input 0 (P0), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
+M950 J2 C"e1stop"  ; Input 2 uses xstop pin
+M581 P2 T2 S1 R0  ; connect trigger2.g (T2) to input 2 (P2), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
+M950 J3 C"e4stop"  ; Input 3 uses xstop pin
+M581 P3 T3 S1 R0  ; connect trigger3.g (T3) to input 3 (P3), trigger occurs on an inactive-to-active edge (S1) at any time (R0)
 
 ; Miscellaneous
 M501 ; load saved parameters from non-volatile memory
