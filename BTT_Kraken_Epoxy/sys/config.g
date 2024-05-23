@@ -43,7 +43,7 @@ M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M569.9 P6 R0.075 ; driver 6 has a 0.075 Ohm sense resistor
 M569.9 P7 R0.075 ; driver 7 has a 0.075 Ohm sense resistor
 M906 X4000 Y4000 Z4000 U4000 V2000 W2000 A2000 B2000 ; set extruder driver currents
-M92 X64 Y64 Z64 U64 V64 W64 A64 B64 ; configure steps per XX uL
+M92 X160 Y160 Z160 U160 V160 W160 A160 B160 ; configure steps per XX uL
 ;M208 X0:100 Y0:100 Z0:100 U0:100 V0:100 W0:100 A0:100 B0:100 ; set minimum and maximum axis limits
 M566 X10000 Y10000 Z10000 U10000 V10000 W10000 A10000 B10000 ; set maximum instantaneous speed changes (mm/min)
 M203 X10000 Y10000 Z10000 U10000 V10000 W10000 A10000 B10000 ; set maximum speeds (mm/min)
