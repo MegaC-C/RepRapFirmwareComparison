@@ -1,6 +1,6 @@
 ; Das ist der Spülen Knopf
 var epoxyAmount = 400 ; epoxy volume in xx/100 mL (e.g. 150 = 1.5 mL)
-var epoxyRetract = -5 ; retract volume so no droplet forms
+var epoxyRetract = -7 ; retract volume so no droplet forms
 
 set var.epoxyAmount = var.epoxyAmount - var.epoxyRetract ; add the retracted amount
 
