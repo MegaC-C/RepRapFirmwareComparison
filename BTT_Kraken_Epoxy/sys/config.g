@@ -20,10 +20,6 @@ M569 P5 S1 D2 ; driver 5 goes forwards (extruder 5)
 M569 P6 S1 D2 ; driver 3 goes forwards (extruder 6)
 M569 P7 S1 D2 ; driver 4 goes forwards (extruder 7)
 
-; Motor Idle Current Reduction
-M906 I30 ; set motor current idle factor
-M84 S30 ; set motor current idle timeout
-
 ; Extruders
 M584 X0 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
 M584 Y1 R0 ; set axis mapping, LIN R0 = LINEAR, R1 = ROTATION
@@ -42,7 +38,8 @@ M569.9 P4 R0.075 ; driver 4 has a 0.075 Ohm sense resistor
 M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M569.9 P6 R0.075 ; driver 6 has a 0.075 Ohm sense resistor
 M569.9 P7 R0.075 ; driver 7 has a 0.075 Ohm sense resistor
-M906 X4000 Y4000 Z4000 U4000 V2000 W2000 A2000 B2000 ; set extruder driver currents
+M906 X2000 Y2000 Z2000 U2000 V1000 W1000 A1000 B1000 I10 ; set extruder driver currents and idle current in % of max
+M84 S10 ; set motor current idle timeout
 M92 X160 Y160 Z160 U160 V160 W160 A160 B160 ; configure steps per XX uL
 ;M208 X0:100 Y0:100 Z0:100 U0:100 V0:100 W0:100 A0:100 B0:100 ; set minimum and maximum axis limits
 M566 X10000 Y10000 Z10000 U10000 V10000 W10000 A10000 B10000 ; set maximum instantaneous speed changes (mm/min)
@@ -67,9 +64,10 @@ M950 P7 C"fan3" ; low current mosfets
 M950 P8 C"fan4" ; low current mosfets
 M950 P9 C"fan5" ; low current mosfets
 M950 P10 C"fan6" ; low current mosfets
-M950 P11 C"fan7" ; low current mosfets
+M950 P11 C"fan7" Q250 ; low current mosfets, 250Hz PWM
 M42 P4 S0 ; turn off red LED 
 M42 P5 S1 ; turn on green LED
+M42 P11 S0.5 ; turn on fan with 50% PWM
 
 ; Input Buttons
 M950 J0 C"xstop"  ; Input 0 pin
