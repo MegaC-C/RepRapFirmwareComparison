@@ -62,12 +62,12 @@ M950 P5 C"fan1" Q2 ; low current mosfets, 2Hz PWM
 M950 P6 C"fan2" ; low current mosfets
 M950 P7 C"fan3" ; low current mosfets
 M950 P8 C"fan4" ; low current mosfets
-M950 P9 C"fan5" Q250 ; low current mosfets, 250Hz PWM
+M950 P9 C"fan5" Q50 ; low current mosfets, 50Hz PWM
 M950 P10 C"fan6" ; low current mosfets
 M950 P11 C"fan7" ; low current mosfets
 M42 P4 S0 ; turn off red LED 
 M42 P5 S1 ; turn on green LED
-M42 P9 S0.5 ; turn on fan with 50% PWM
+M42 P9 S0.7 ; turn on fan with PWM
 
 ; Input Buttons
 M950 J0 C"xstop"  ; Input 0 pin
