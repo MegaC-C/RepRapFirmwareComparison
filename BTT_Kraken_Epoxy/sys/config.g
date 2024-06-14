@@ -38,7 +38,7 @@ M569.9 P4 R0.075 ; driver 4 has a 0.075 Ohm sense resistor
 M569.9 P5 R0.075 ; driver 5 has a 0.075 Ohm sense resistor
 M569.9 P6 R0.075 ; driver 6 has a 0.075 Ohm sense resistor
 M569.9 P7 R0.075 ; driver 7 has a 0.075 Ohm sense resistor
-M906 X3000 Y3000 Z3000 U3000 V1500 W1500 A1500 B1500 I10 ; set extruder driver currents and idle current in % of max
+M906 X3600 Y3600 Z3600 U3600 V1800 W1800 A1800 B1800 I10 ; set extruder driver currents and idle current in % of max
 M84 S10 ; set motor current idle timeout
 M92 X185 Y185 Z185 U185 V185 W185 A185 B185 ; configure steps per XX uL
 ;M208 X0:100 Y0:100 Z0:100 U0:100 V0:100 W0:100 A0:100 B0:100 ; set minimum and maximum axis limits
